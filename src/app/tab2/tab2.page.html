@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Lista de Comics
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+<div *ngFor="let comic of commic; let i = index">
+  <br>
+    <ion-card class="">
+      <!-- {{comic['images'][0]['path']}}.{{comic['images'][0]['extension']}}
+    -->
+    <ion-thumbnail >
+        <img src="{{comic['thumbnail']['path']}}.{{comic['thumbnail']['extension']}}">
+      </ion-thumbnail>
+      <ion-card-header>
+        <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+        <ion-card-title>{{comic['title']}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{comic['description']}}</p>
+      </ion-card-content>
+    </ion-card>
+</div>
+</ion-content>
